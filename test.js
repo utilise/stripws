@@ -10,5 +10,9 @@ describe('stripws', function() {
   it('should work with template literals', function() {
     expect(stripws(['<a>\n  <b>'])).to.be.eql('<a><b>')
   })
+
+  it('should strip unindented new lines', function() {
+    expect(stripws(['<a>\n<b>'])).to.be.eql('<a><b>')
+  })
   
 })
